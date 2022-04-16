@@ -100,10 +100,12 @@ select {
     --mail-tel-color: rgba(255, 255, 255, 0.6);
     --accent-color: #2196F3;
     --button-bgcolor: #F5F4FA;
-
+    --icon-color: #AFB1B8;
+    --bgcolor-icon-footer: rgba(255, 255, 255, 0.1);
 }
 a{
     text-decoration: none;
+  
 }
 
 body{
@@ -172,6 +174,7 @@ margin-left: auto;
   
 }
 .nav-communication{
+    display: flex;
     color: var(--Secondary-text-color);
   
     font-weight: 500;
@@ -179,7 +182,12 @@ margin-left: auto;
     letter-spacing: 0.02em;
 
 }
-
+.icon-envelope,
+.icon-tel {
+    display: inline-flex;
+    margin-right: 10px;
+    fill: currentColor;
+}
 .nav-list li:not(:first-child) {
     margin-left: 50px;
 }
@@ -198,18 +206,28 @@ main{
     
     padding: 0 15px;
 }
-.our-lessons, .our-team, .portfolio{
-    padding: 94px 0;
+.our-lessons, .our-team, .portfolio,
+.regular-customers{
+    padding-top: 94px;
+    padding-bottom: 94px; ;
 }
 .our-feathers{
     padding-top: 94px;
+
 }
+/* hero */
 .hero{
-    background-color: var(--third-bgcolor);
+background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), 
+url(../img/bgimg.jpg);
+background-repeat: no-repeat;
+width: 1600px;
+height: 600px;
+margin: 0 auto;
     padding: 200px 0;
 }
 .hero-title {
     color: var(--white);
+    
 
 
     font-weight: 900;
@@ -233,14 +251,31 @@ main{
     line-height: 1.88;
     letter-spacing: 0.06em;
 
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: none;
+    padding: 10px 32px;
     margin-left: auto;
     margin-right: auto ;
     
     display: block;
 }
+
+/*Особенности  */
 .feature-list{
     display: flex;
+}
+.icon-feature {
+    width: 70px;
+    height: 70px;
+}
 
+.icon-feature-container {
+    padding: 25px 100px;
+    background-color: var(--button-bgcolor);
+    border-radius: 4px;
+    margin-bottom: 30px;
 }
 .feature-list li:not(:last-child){
   margin-right: 30px;
@@ -258,7 +293,7 @@ main{
     margin-top: 10px;
 
 }
-.lessons-titile, .team-title{
+.lessons-titile, .team-title, .regular-customers-title{
     color: var(--primary-text-color) ;
 
     font-weight: 700;
@@ -269,12 +304,18 @@ main{
     margin-bottom: 50px;
 }
 
+
+
+/*Чем мы занимаемся  */
 .lessons-list{
     display: flex;
 }
 .lessons-list li:not(:last-child){
     margin-right: 30px;
 }
+
+
+/* Наша команда */
 .list-item-worker:not(:last-child){
     margin-right: 30px;
 }
@@ -309,7 +350,88 @@ main{
     margin-top: 10px;
 }
 .name-info-container{
-    margin-top: 30px;
+    padding: 32px 30px;
+}
+.sochial-icon-list {
+    display: flex;
+    margin-top: 16px;
+    justify-content: space-between;
+
+}
+
+.sochial-icon-link {
+    display: flex;
+    width: 44px;
+    height: 44px;
+
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.sochial-icon-link a {
+    display: flex;
+}
+
+.sochial-icon-link:hover {
+    background-color: var(--accent-color);
+
+    cursor: pointer;
+}
+
+.sochial-icon-link:hover .sochial-icon-link-svg {
+    fill: var(--white);
+}
+
+.sochial-icon-link-svg {
+
+    width: 20px;
+    height: 20px;
+    fill: var(--icon-color);
+    margin: auto;
+}
+
+
+/* Постоянные клиенты */
+.regular-customers-list {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.regular-customers-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 170px;
+    height: 92px;
+    border: 1px solid var(--icon-color);
+    box-sizing: border-box;
+    border-radius: 4px;
+
+}
+
+.regular-customers-item-svg {
+    fill: currentColor
+}
+
+.regular-customers-item a {
+    color: var(--icon-color);
+}
+
+.regular-customers-item:hover,
+.regular-customers-item:hover .regular-customers-item-svg {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    cursor: pointer;
+}
+
+.regular-customers-item:focus,
+.regular-customers-item:focus .regular-customers-item-svg {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    cursor: pointer;
 }
 /* footer */
 .footer{
@@ -337,7 +459,51 @@ main{
 
     margin-top: 9px;
 }
+.icon-list-footer {
+    display: flex;
+}
 
+.icon-link-footer-svg {
+    width: 20px;
+    height: 20px;
+}
+
+.icon-link-footer {
+    width: 44px;
+    height: 44px;
+    background-color: teal;
+}
+
+.general-container-footer {
+    display: flex;
+    align-items: baseline;
+}
+
+.second-container-footer {
+    margin-left: 70px;
+}
+
+.second-container-footer-title {
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+.sochial-icon-link-svg-footer {
+    fill: var(--white);
+
+}
+
+.sochial-icon-link-footer {
+    background-color: var(--bgcolor-icon-footer);
+}
+
+.sochial-icon-link-footer:not(:last-child) {
+    margin-right: 10px;
+}
 
 
 /* main portfolio */
